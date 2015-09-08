@@ -15,11 +15,11 @@ public class ChromeTest {
 	public void as()
 	{
 		System.setProperty("webdriver.chrome.driver", "/Users/muktaaphale/Downloads/chromedriver");
-				
+
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://www.google.com");
 		driver.navigate().to("http://www.google.com");
-		
+
 		WebElement element = driver.findElement(By.name("q"));
 		element.sendKeys("Cheese!");
 		element.submit();
