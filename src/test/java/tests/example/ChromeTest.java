@@ -14,7 +14,7 @@ public class ChromeTest {
 	@Test
 	public void as()
 	{
-		System.setProperty("webdriver.chrome.driver", "/Users/muktaaphale/Downloads/chromedriver");
+	        System.setProperty("webdriver.chrome.driver", "/Users/muktaaphale/Downloads/chromedriver");
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://www.google.com");
