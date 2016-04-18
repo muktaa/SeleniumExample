@@ -1,13 +1,5 @@
-FROM ubuntu
-
-RUN apt-get update && apt-get install -y git
-RUN apt-get install -y maven
-
-COPY chromedriver /tmp
-
-# Selenium libraries
-RUN git clone https://github.com/muktaa/SeleniumExample /SeleniumExample
-
-WORKDIR /SeleniumExample
-
-ENTRYPOINT ["mvn", "test"]
+FROM maven:3.2-jdk-7
+COPY . /usr/share/app
+WORKDIR /usr/share/app
+RUN mvn install -DskipTests=true
+CMD ["mvn", "test", "-Dtest=tests.example.HtmlUnitDriverTest"]
