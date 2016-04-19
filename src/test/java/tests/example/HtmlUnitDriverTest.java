@@ -25,4 +25,24 @@ public void as() {
 		driver.quit();
 	}
 
+	@Test
+	public void microservicesBasic()
+	{
+                WebDriver driver = new HtmlUnitDriver(true);
+
+                final String url = System.getenv("TEST_URL");
+
+                driver.get(url);
+                driver.navigate().to(url);
+
+                Assert.assertTrue(driver.getPageSource().contains("This page has been viewed"));
+
+		driver.navigate().refresh();
+                Assert.assertTrue(driver.getPageSource().contains("This page has been viewed"));
+
+                //Close the browser
+                driver.quit();
+
+}	
+
 }
