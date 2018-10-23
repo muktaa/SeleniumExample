@@ -1,4 +1,4 @@
-FROM maven:3.2-jdk-7
+FROM maven:3.3-jdk-8
 COPY . /usr/share/app
 WORKDIR /usr/share/app
 RUN mvn install -DskipTests=true
